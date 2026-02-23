@@ -5,6 +5,14 @@ const path = require('path');
 // Initialize database (creates tables on require)
 const db = require('./db/database');
 
+// Auto-seed products if the products table is empty (for fresh deploys)
+const productCount = db.prepare('SELECT COUNT(*) as count FROM products').get();
+if (productCount.count === 0) {
+    console.log('No products found — running seed...');
+    require('./db/seed');
+    console.log('Database seeded successfully.');
+}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 

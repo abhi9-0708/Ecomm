@@ -6,7 +6,7 @@ package-lock.json
 .env
 env
 
-# Database
+# Database (local only — Render rebuilds from seed)
 *.db
 *.sqlite
 *.sqlite3

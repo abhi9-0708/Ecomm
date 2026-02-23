@@ -10,7 +10,8 @@
     "test": "jest --verbose --forceExit --detectOpenHandles",
     "test:api": "jest tests/api --verbose --forceExit --detectOpenHandles",
     "test:ui": "npx playwright test",
-    "test:all": "npm run test:api && npm run test:ui"
+    "test:all": "npm run test:api && npm run test:ui",
+    "build": "node db/seed.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -25,5 +26,8 @@
     "@playwright/test": "^1.49.0",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
